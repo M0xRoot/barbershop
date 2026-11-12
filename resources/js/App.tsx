@@ -1,11 +1,11 @@
 import "./Assets/Styles/Style.css";
-import Login from "./Pages/Auth/Login";
+import Auth from "./Pages/Auth/Auth";
 
 export default function App() {
     return (
         <>
             <div>
-                <Login />
+                <Auth />
             </div>
         </>
     );
