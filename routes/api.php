@@ -1,8 +1,15 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use illuminate\support\facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+$apis = [
+    'admin',
+    'owner',
+    'client',
+];
+
+foreach ($apis as $api) {
+    Route::prefix($api)
+        ->name("{$api}.")
+         ->group(__DIR__ . "/api/{$api}.php");
+}
