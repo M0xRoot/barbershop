@@ -2,4 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'admin')->name('admin');
+Route::view('/{any?}', 'app')->name('app');
