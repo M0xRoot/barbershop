@@ -5,6 +5,7 @@ import {
     FiUsers,
     FiScissors,
     FiSettings,
+    FiUser,
 } from "react-icons/fi";
 
 export const NavLinks: NavigationItem[] = [
@@ -32,5 +33,10 @@ export const NavLinks: NavigationItem[] = [
         label: "Settings",
         icon: FiSettings,
         path: "/settings",
+    },
+    {
+        label: "Profile",
+        icon: FiUser,
+        path: "/profile",
     },
 ];
