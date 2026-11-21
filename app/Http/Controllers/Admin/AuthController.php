@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Admin\Auth\UserResource;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\JsonApi\Concerns\ResolvesJsonApiElements;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller

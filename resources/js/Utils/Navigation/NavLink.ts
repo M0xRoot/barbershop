@@ -1,42 +1,37 @@
 import { NavigationItem } from "@/Types/Types";
-import {
-    FiGrid,
-    FiCalendar,
-    FiUsers,
-    FiScissors,
-    FiSettings,
-    FiUser,
-} from "react-icons/fi";
+import { FiUsers, FiSettings, FiUser } from "react-icons/fi";
+import { RiAdvertisementLine, RiServiceLine } from "react-icons/ri";
+import { MdOutlineSpaceDashboard } from "react-icons/md";
 
 export const NavLinks: NavigationItem[] = [
     {
         label: "Dashboard",
-        icon: FiGrid,
+        icon: MdOutlineSpaceDashboard,
         path: "/admin",
     },
     {
-        label: "Appointments",
-        icon: FiCalendar,
-        path: "/appointments",
+        label: "Users",
+        icon: FiUsers,
+        path: "/admin/users",
     },
     {
-        label: "Clients",
-        icon: FiUsers,
-        path: "/clients",
+        label: "Ads",
+        icon: RiAdvertisementLine,
+        path: "/admin/ads",
     },
     {
         label: "Services",
-        icon: FiScissors,
-        path: "/services",
+        icon: RiServiceLine,
+        path: "/admin/services",
     },
     {
         label: "Settings",
         icon: FiSettings,
-        path: "/settings",
+        path: "/admin/settings",
     },
     {
         label: "Profile",
         icon: FiUser,
-        path: "/profile",
+        path: "/admin/profile",
     },
 ];

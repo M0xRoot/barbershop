@@ -10,3 +10,12 @@ export type NavigationItem = {
     icon: IconType;
     path: string;
 };
+
+export type VerticalNavProps = {
+    isVisibleNav: boolean;
+    setIsVisibleNav: (open: boolean) => void;
+};
+
+export type HorizotalNavProps = {
+    setIsVisibleNav: (open: boolean) => void;
+};

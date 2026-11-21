@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Permission;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\PermissionRegistrar;
 
 class PermissionSeeder extends Seeder
 {
@@ -13,10 +12,21 @@ class PermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        app(PermissionRegistrar::class)->forgetCachedPermissions();
 
-        foreach (['users.create', 'users.show', 'users.delete', 'users.update'] as $name) {
-            Permission::findOrCreate($name, 'web');
+        $permissions = [
+            'dashboard.view',
+
+            'users.viewAny',
+            'users.view',
+            'users.create',
+            'users.update',
+            'users.archive',
+        ];
+
+        foreach ($permissions as $permission) {
+            Permission::create([
+                'name' => $permission,
+            ]);
         }
     }
 }

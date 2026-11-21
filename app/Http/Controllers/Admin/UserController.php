@@ -12,4 +12,9 @@ class UserController extends Controller
     {
         return new UserResource($request->user());
     }
+
+    public function index(Request $request)
+    {
+        //
+    }
 }

@@ -14,10 +14,18 @@ return new class extends Migration {
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email')->unique();
-            $table->string('phone_number')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->foreignId('role_id')
+                ->constrained('roles')
+                ->restrictOnDelete();
+            $table->string('email')
+                ->unique();
+            $table->string('phone_number')
+                ->nullable();
+            $table->timestamp('email_verified_at')
+                ->nullable();
             $table->string('password');
+            $table->enum('status', ['active', 'blocked'])
+                ->default('active');
             $table->rememberToken();
             $table->timestamps();
         });

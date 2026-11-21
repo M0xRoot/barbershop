@@ -83,12 +83,7 @@ export default function Auth() {
                 </div>
             </div>
 
-            <div className="flex w-full items-center justify-between text-sm">
-                <label className="flex items-center gap-2">
-                    <input type="checkbox" />
-                    Remember me
-                </label>
-
+            <div className="flex w-full items-center justify-center text-sm">
                 <button className="text-accent hover:underline cursor-pointer">
                     Forgot password?
                 </button>
@@ -102,13 +97,6 @@ export default function Auth() {
             >
                 {mutation.isPending ? "Signing in..." : "Sign in"}
             </button>
-
-            <div className="text-sm">
-                Don't have an account?{" "}
-                <button className="text-accent hover:underline cursor-pointer">
-                    Sign up
-                </button>
-            </div>
         </AuthCard>
     );
 }

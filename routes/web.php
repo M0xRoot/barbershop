@@ -2,4 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/{any?}', 'app')->name('app');
+Route::view('/{any?}', 'app')
+    ->where('any', '.*')
+    ->name('app');

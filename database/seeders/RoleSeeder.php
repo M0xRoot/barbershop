@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\PermissionRegistrar;
 
 class RoleSeeder extends Seeder
 {
@@ -13,10 +12,10 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
+        $roles = ['admin', 'owner', 'client'];
 
-        app(PermissionRegistrar::class)->forgetCachedPermissions();
-
-        Role::findOrCreate('admin', 'web')
-            ->syncPermissions(['users.create', 'users.show', 'users.delete', 'users.update']);
+        foreach ($roles as $role) {
+            Role::create(['name' => $role]);
+        }
     }
 }
